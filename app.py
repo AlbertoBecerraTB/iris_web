@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 import pickle
 import numpy as np
 
-model = pickle.load(open('iri.pkl', 'rb'))
+model = pickle.load(open({{url_for('static', filename='iri.pkl')}}, 'rb'))
 
 app = Flask(__name__)
 
